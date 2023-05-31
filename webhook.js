@@ -14,6 +14,12 @@ app.use(bodyParser.json());
 //     res.sendStatus(200); // Respond with a success status code
 // });
 
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'none'; font-src 'self' data:;");
+    next();
+  });
+
+  
 app.all('/webhook/17track', (req, res) => {
     if (req.method === 'GET') {
       // Handle GET request
