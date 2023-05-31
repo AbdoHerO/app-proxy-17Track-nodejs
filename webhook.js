@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
-
+let trackingData = null;
 // app.post('/webhook/17track', (req, res) => {
 //     // Handle the incoming webhook request
 //     const payload = req.body; // Access the payload data sent by 17TRACK
@@ -29,7 +29,8 @@ app.all('/webhook/17track', (req, res) => {
       // Handle POST request
       const payload = req.body; // Access the payload data sent by 17TRACK
       console.log('Webhook payload:', payload); // Log the payload for testing
-  
+      trackingData = payload;
+      
       console.log('METHODE', "POST");
       // Process the payload and perform any necessary actions
   
