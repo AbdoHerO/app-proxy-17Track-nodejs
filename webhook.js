@@ -28,9 +28,11 @@ app.all('/webhook/17track', (req, res) => {
     } else if (req.method === 'POST') {
       // Handle POST request
       const payload = req.body; // Access the payload data sent by 17TRACK
-      console.log('Webhook payload:', payload); // Log the payload for testing
+      console.log('Webhook payload:', payload);
+       // Log the payload for testing
       trackingData = payload;
-      
+
+
       console.log('METHODE', "POST");
       // Process the payload and perform any necessary actions
   
